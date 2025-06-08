@@ -11,8 +11,12 @@ import ProductInfo from "./components/ProductInfo";
 import List from "./components/List";
 import UserList from "./components/UserList";
 import ProductList from "./components/ProductList";
+import Person from "./components/Person";
+import Card from "./components/Card";
 const App = () => {
   return <div>
+  <Person name="BROOO" age={22}/>
+  <User name="RG" age={22} isMarried={false} hobbies={["coding","reading","sleeping"]}/>;
   <ProductList/>
   <UserList/>
     <Greeting/>
@@ -26,6 +30,21 @@ const App = () => {
     <Footer/>
     <Rule/>
     <Expression/>
+    <Card>
+         <h1>Card Component</h1>
+         <p>This is a simple card component.</p>
+    </Card>
   </div>;
+  
+  
+
 };
+const User = ({name,age,isMarried,hobbies})=>{
+  return <section>
+    <h1>Name:{name}</h1>
+    <h2>Age : {age}</h2>
+    <h3>Is married:{isMarried}</h3>
+    <h4>Hobbies: {hobbies}</h4>
+  </section>
+}
 export default App;
