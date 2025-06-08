@@ -1,5 +1,5 @@
 import { FaCartPlus } from "react-icons/fa6";
-
+import { useState } from "react";
 import Style from "./components/Style";
 import ProfileCard from "./components/ProfileCard";
 import IconComponent from "./components/IconComponent";
@@ -10,12 +10,23 @@ const Botton =()=>{
   )
 }
 const App = () => {
-  return( <div>
+  const [friends,setFriends] = useState(["Alex","John"]);
+  const addOneFriend = () => {
+    setFriends([...friends,"Rachit Gupta"]);
+  }
+  const removeOneFriend = () => {
+    setFriends(friends.filter((f => f !== "John")));
+  }
+  return(<div>
+    {friends.map((f)=>(
+      <li key={Math.random()}>{f}</li>
+    ))}
+    <button onClick={addOneFriend}>Add New Friend</button>
+    <button onClick={removeOneFriend}>Remove Friend</button>
     <Style/>
     <ProfileCard/>
     <IconComponent/>
-    <Botton/>
   </div>
-  )
+  );
 }
 export default App;
