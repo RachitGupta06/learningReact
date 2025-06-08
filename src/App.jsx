@@ -10,8 +10,10 @@ import Greeting from "./components/Greeting";
 import ProductInfo from "./components/ProductInfo";
 import List from "./components/List";
 import UserList from "./components/UserList";
+import ProductList from "./components/ProductList";
 const App = () => {
   return <div>
+  <ProductList/>
   <UserList/>
     <Greeting/>
     <ProductInfo/>
